@@ -1,6 +1,6 @@
-# Atividades aula 1:
+# Atividades Aula 1:
 
-## Entrada e saida de dados:
+## Entrada e Sada de dados:
 <h3>
 1°: Crie um algoritmo para calcular o IMC do usuário.
 IMC = peso / altura²
