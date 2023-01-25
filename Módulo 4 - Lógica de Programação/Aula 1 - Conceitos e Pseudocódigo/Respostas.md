@@ -1,4 +1,5 @@
-# Questão 1: Crie um algoritmo para calcular o IMC do usuário. Formula: IMC = peso / altura²
+# Questão 1: 
+### Crie um algoritmo para calcular o IMC do usuário. Formula: IMC = peso / altura²
 ```Portugol
 programa
 {
@@ -22,3 +23,32 @@ programa
   }
 }
 ```
+
+# Questão 2:
+### Transformar uma temperatura de Fahrenheit para Celsius.
+### TC = (TF - 32) / 1,8
+### TC: Temperatura em Celsius.
+### TF: Temperatura em Fahrenheit.
+
+```Portugol
+programa
+{
+	//Declaração das Variáveis
+	real TC
+	real TF
+
+	funcao inicio()
+	{
+		//Entrada de dados
+		escreva("Qual a temperatura em Fahrenheit: ")
+		leia(TF)
+		
+		//Processamento de Dados
+		TC = (TF - 32) / 1.8
+
+		//Saída de Dados
+		escreva("A temperatura " + TF + " °F" + "em Celsius é " + TC + "°C")
+	}
+}
+
+````
