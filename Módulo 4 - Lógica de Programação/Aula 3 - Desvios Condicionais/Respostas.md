@@ -3,62 +3,61 @@
 ### Verifique o código sempre com os slides para conseguir abstrair o significado. 
 
 # Questão 1: 
-### Crie um algoritmo para calcular o IMC do usuário. Formula: IMC = peso / altura²
+### Solicite um número ao usuário e mostre se o número é positivo ou negativo. Se o numero for positivo mostre se ele é impar ou par.
 ```C#
             //Declaração das Variáveis
-            double imc = 0.0f;
-            float peso = 0.0f;
-            float altura = 0.0f;
+           float numero = 0;
 
             //Entrada de Dados
-            Console.Write("Qual a sua altura: ");
-            altura = float.Parse(Console.ReadLine());
+            Console.Write("Digite um número: ");
+            numero = float.Parse(Console.ReadLine());
             //ou esse
-            //float.TryParse(Console.ReadLine(), out altura);
+            //float.TryParse(Console.ReadLine(), out numero);
 
-            Console.Write("Qual o seu peso: ");
-            peso = float.Parse(Console.ReadLine());
-            //ou esse
-            //float.TryParse(Console.ReadLine(), out peso);
-
-            //Processamento de Dados
-            imc = peso / (altura * altura);
-            //ou esse
-            //imc = peso / Math.Pow(altura,2);
-
-            //Saída de Dados
-            Console.WriteLine($"Seu IMC é de {imc}");
+            //Processamento e Saída de Dados
+            if(numero % 2 == 0)
+            {
+                Console.WriteLine($"O número {numero} é PAR");
+            }
+            else
+            {
+                Console.WriteLine($"O número {numero} é IMPAR");
+            }
+            
 ```
 
 # Questão 2:
-### Transformar uma temperatura de Fahrenheit para Celsius.
-### TC = (TF - 32) / 1,8
-### TC: Temperatura em Celsius.
-### TF: Temperatura em Fahrenheit.
+### A cancela de um estabelecimento, em momento de pandemia, funciona dependendo da temperatura aferida e registrada pelo recepcionista do local. É preciso criar um algoritmo para liberar ou não a cancela dependendo da temperatura corporal. Com um medidor o recepcionista irá aferir e registrar no sistema e o algoritmo deverá liberar caso a temperatura seja <= 37 e não liberar caso a temperatura seja maior que 37º. A cancela só recebe True ou False (True para liberar e False para bloquear)
 
 ```C#
             //Declaração das Variáveis
-            float tc = 0.0f;
-            float tf = 0.0f;
+            float temp = 0;
+            bool liberar = false;
 
             //Entrada de Dados
-            Console.Write("Qual a temperatura em Fahrenheit: ");
-            tf = float.Parse(Console.ReadLine());
+            Console.Write("Qual a temperatura: ");
+            temp = float.Parse(Console.ReadLine());
             //ou esse
-            //float.TryParse(Console.ReadLine(), out tf);
+            //float.TryParse(Console.ReadLine(), out temp);
 
-            //Processamento de Dados
-            tc = (tf - 32) / 1.8f;
-
-            //Saída de Dados
-            Console.WriteLine($"A temperatura {tf} °F em Celsius é {tc} °C");
-
+            //Processamento e Saídade Dados
+            if(temp <= 37)
+            {
+                liberar = true;
+                Console.WriteLine($"Cancela Liberada!");
+            }
+           else
+           {
+                liberar = false;
+                Console.WriteLine($"Cancela Bloqueada!");
+           }
 ````
 
 
 # Questão 3:
-### Escreva um algoritmo para ler as dimensões de um retângulo (largura e comprimento), calcular e escrever a área do retângulo.
-### retangulo = largura * comprimento
+### Leia um número real. Se o numero for positivo imprima a raiz quadrada. Do contrario,  imprima o numero ao quadrado. 
+Use Math.Sqrt() para a raiz quadrada.
+Use Math.Pow() para o numero ao quadrado.
 
 ```C#
             //Declaração das Variáveis
