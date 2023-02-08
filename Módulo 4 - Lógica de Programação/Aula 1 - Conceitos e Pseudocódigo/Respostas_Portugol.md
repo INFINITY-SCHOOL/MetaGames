@@ -15,11 +15,11 @@ programa
 		escreva("Qual seu peso: ")
 		leia(peso)
 
-  //Processamento de Dados
-	  imc = peso / (altura * altura)
+  		//Processamento de Dados
+		imc = peso / (altura * altura)
 
-   //Saída de Dados
-	   escreva("Seu IMC é de " + imc)
+  		//Saída de Dados
+	  	escreva("Seu IMC é de " + imc)
   }
 }
 ```
