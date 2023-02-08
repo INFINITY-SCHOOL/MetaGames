@@ -1,6 +1,7 @@
 # Dicas:
 ### Para tester, crie normalmente seu projeto e cole os codigos apenas dentro da função main.
 ### Verifique o código sempre com os slides para conseguir abstrair o significado. 
+### Caso esteja usando o Visual Studio Community, utiline o comando Console.ReadLine() no final do código. Se for o VS Code não há necessidade.
 
 # Questão 1: 
 ### Crie um algoritmo para calcular o IMC do usuário. Formula: IMC = peso / altura²
