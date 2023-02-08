@@ -121,25 +121,45 @@
 ````
 
 # Questão 5: 
-### ELer o nome de 2 times e o número de gols marcados na partida (para cada time).
-E no final escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE.
+### Ler o nome de 2 times e o número de gols marcados na partida (para cada time). E no final escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE.
 
 ```C#
-            //Entrada de Dados
-            int A = 10;
-            int B = 20;
-            int C = 0;
-            int D = 0;
+            //Declaração das Variáveis
+            string time1 = "";
+            string time2 = "";
+            int gols1 = 0;
+            int gols2 = 0;
+
+            //Entrada de Dado
+             //Entrada de Dados
+            Console.Write("Qual o time 1:  ");
+            time1 = Console.ReadLine();
+            Console.Write("Qual o time 2:  ");
+            time2 = Console.ReadLine();
+
+            Console.Write($"Quantos gols o time {time1} marcou: ");
+            gols1 = int.Parse(Console.ReadLine());
+            //ou esse
+            //int.TryParse(Console.ReadLine(), out gols1);
+            Console.Write($"Quantos gols o time {time2} marcou: ");
+            gols2 = int.Parse(Console.ReadLine());
+            //ou esse
+            //int.TryParse(Console.ReadLine(), out gols2);
 
             //Processamento de Dados
-            C = A;
-            D = B;
-            A = D;
-            B = C;
 
-            //Saída de Dados
-            Console.WriteLine($"Antes A tinha o valor {C}. Agora tem o valor {A}");
-            Console.WriteLine($"Antes B tinha o valor {D}. Agora tem o valor {B}")
+            if(gols1 > gols2)
+            {
+                Console.WriteLine($"Time {time1} venceu.");
+            }
+            if(gols1 < gols2)
+            {
+                Console.WriteLine($"Time {time2} venceu.");
+            }
+            else
+            {
+                Console.WriteLine($"EMPATE.");
+            }
 
 ```
 
@@ -148,25 +168,40 @@ E no final escrever o nome do vencedor. Caso não haja vencedor deverá ser impr
 
 ```C#
             //Declaração das Variáveis
-            float carroNovo = 0.0f;
-            float custoFabrica = 0.0f;
-            float percDistribuidor = 0.28f;
-            float impostos = 0.45f;
+            float prod1 = 0;
+            float prod2 = 0;
+            float prod3 = 0;
 
             //Entrada de Dados
-            Console.Write("Qual foi o custo para fabricar o carro R$: ");
-            custoFabrica = float.Parse(Console.ReadLine());
+            Console.Write("Qual o preço do primeiro produto? R$: ");
+            prod1 = float.Parse(Console.ReadLine());
             //ou esse
-            //float.TryParse(Console.ReadLine(), out custoFabrica);
+            //float.TryParse(Console.ReadLine(), out prod1);
+            Console.Write("Qual o preço do segundo produto? R$: ");
+            prod2 = float.Parse(Console.ReadLine());
+            //ou esse
+            //float.TryParse(Console.ReadLine(), out prod2);
+            Console.Write("Qual o preço do terceiro produto? R$: ");
+            prod3 = float.Parse(Console.ReadLine());
+            //ou esse
+            //float.TryParse(Console.ReadLine(), out prod3);
 
-            //Processamento de Dados
-            carroNovo = custoFabrica * impostos + custoFabrica * percDistribuidor + custoFabrica;
-
-            //Saída de Dados
-            Console.WriteLine($"O valor do novo carro é de R$ {carroNovo.ToString("0.00")}");
-
+            //Processamento e Saída de Dados
+            if(prod1 > prod2 > prod3)
+            {
+                Console.WriteLine($"Compre o produto 3.");
+            }
+            else if(prod3 > prod1 > prod2)
+            {
+                Console.WriteLine($"Compre o produto 2.");
+            }
+            else if(prod2 > prod3 > prod1)
+            {
+                Console.WriteLine($"Compre o produto 1.");
+            }
+            
 ```
-# Questão 6:
+# Questão 7:
 ### Uma empresa quer verificar se um empregado está qualificado para a aposentadoria ou não. Para isso tem que se ter um dos seguintes requisitos:
 #### 1) Ter no mínimo 65 anos de idade. 
 #### 2) Ter trabalhado no mínimo 30 anos. 
@@ -174,3 +209,43 @@ E no final escrever o nome do vencedor. Caso não haja vencedor deverá ser impr
 
 ### Faça um algoritmo que leia: o número do empregado (código), o ano de seu nascimento e o ano de seu ingresso na empresa. O programa deverá escrever a idade e o tempo de trabalho do empregado e a mensagem 'Requerer aposentadoria' ou 'Não requerer'.
 ### Use: DateTime.Now.Year, para pegar o valor do ano atual.
+
+```C#
+            //Declaração das Variáveis
+            int codigo = 0;
+            int anoNascimento = 0;
+            int anoContratacao = 0;
+            int idade = 0;
+            int tempoTrabalhado = 0;
+
+            //Entrada de Dados
+            Console.Write("Qual o número do empregado (código): ");
+            codigo = float.Parse(Console.ReadLine());
+            //ou esse
+            //float.TryParse(Console.ReadLine(), out codigo);
+            Console.Write("Qual o ano de seu nascimento: ");
+            anoNascimento = float.Parse(Console.ReadLine());
+            //ou esse
+            //float.TryParse(Console.ReadLine(), out anoNascimento);
+            Console.Write("Qual o ano de seu ingresso na empresa: ");
+            anoContratacao = float.Parse(Console.ReadLine());
+            //ou esse
+            //float.TryParse(Console.ReadLine(), out anoContratacao);
+
+            //Processamento Dados 
+            
+            idade =  DateTime.Now.Year - anoNascimento;
+            tempoTrabalhado = DateTime.Now.Year - anoContratacao;
+
+            //Saída de Dados
+            if(idade >= 65 || tempoTrabalhado >= 30 || (idade >= 60 && tempoTrabalhado >= 25))
+            {
+                Console.WriteLine($"Idade: {idade}. Tempo trabalhado: {tempoTrabalhado}. Requerer aposentadoria.");
+            }
+            else 
+            {
+                Console.WriteLine($"Idade: {idade}. Tempo trabalhado: {tempoTrabalhado}. Não requerer.");
+            }
+            
+            
+```
