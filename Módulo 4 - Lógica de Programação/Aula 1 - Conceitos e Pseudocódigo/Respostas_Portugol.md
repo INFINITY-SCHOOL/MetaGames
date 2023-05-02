@@ -1,6 +1,6 @@
 # Questão 1: 
 ### Crie um algoritmo para calcular o IMC do usuário. Formula: IMC = peso / altura²
-```Portugol
+```Portugol Studio
 programa
 {
 //Declaração das Variáveis
